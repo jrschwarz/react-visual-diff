@@ -28,15 +28,16 @@ const differMap = {
 const renderChange = ({ type, children }) => {
   if (children == null) {
     return null;
-  } 
+  }
+
   if (children != null && blockElements.includes(children.type)) {
     return <div
-      style={type === 'added' ? addedBlock : removedBlock}
+      style={type === 'added' ? addedBlock : type === 'removed' ? removedBlock : {}}
     >{children}</div>;
   }
 
   return <span
-    style={type === 'added' ? addedInline : removedInline}
+    style={type === 'added' ? addedInline : type === 'removed' ? removedInline : {}}
   >{children}</span>;
 };
 
