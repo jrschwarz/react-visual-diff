@@ -74,6 +74,7 @@ const reduceChange = (differ) => {
         } else {
           return {
             type: 'span',
+            diffType: 'unchanged',
             props:{
               children: item.value
             }
